@@ -1,39 +1,30 @@
 ﻿using System;
 
-namespace Shared.Utility
-{
-    public class Schema : Attribute
-    {
+namespace Shared.Utility {
+    public class Schema: Attribute {
         public string Name { get; set; }
-        public Schema(string name = null)
-        {
+        public Schema(string name = null) {
             Name = name;
         }
     }
-    public class InputParameter : Attribute
-    {
+    public class InputParameter: Attribute {
         public string Name { get; set; }
-        public InputParameter(string name = null)
-        {
+        public InputParameter(string name = null) {
             Name = name;
         }
     }
-    public class OutputParameter : Attribute
-    {
+    public class OutputParameter: Attribute {
         public string Name { get; set; }
-        public OutputParameter(string name = null)
-        {
+        public OutputParameter(string name = null) {
             Name = name;
         }
     }
-    public class ErrorAttribute : Attribute
-    {
+    public class ErrorAttribute: Attribute {
         public string Message { get; set; }
 
-        public ErrorAttribute(string message)
-        {
+        public ErrorAttribute(string message) {
             Message = message;
         }
     }
-    public class HelperParameter : Attribute { }
+    public class HelperParameter: Attribute { }
 }

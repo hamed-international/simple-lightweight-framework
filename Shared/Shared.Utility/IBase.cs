@@ -1,10 +1,8 @@
 ﻿
-namespace Shared.Utility
-{
+namespace Shared.Utility {
     public interface IBaseModel { }
     public interface IBaseSchema { }
-    public class PagingSchema : IBaseSchema
-    {
+    public class PagingSchema: IBaseSchema {
         [InputParameter]
         public string @OrderBy { get; set; }
         [InputParameter]

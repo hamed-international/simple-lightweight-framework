@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Shared.Utility
-{
-    public class GeneralMessage
-    {
+namespace Shared.Utility {
+    public class GeneralMessage {
         public const string OK = "عملیات با موفقیت انجام شد.";
         public const string InternalServerError = "عملیات با خطا مواجه شد.";
         public const string TokenNotFound = "توکن یافت نشد";

@@ -8,12 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Presentation.WebApi.MapperProfiles
-{
-    public class EventProfile : Profile
-    {
-        public EventProfile()
-        {
+namespace Presentation.WebApi.MapperProfiles {
+    public class EventProfile: Profile {
+        public EventProfile() {
             CreateMap<EventModel, EventViewModel>()
                 .ForMember(d => d.StartedAt, s => s.MapFrom(mf => mf.StartedAt.UnixTimestampFromDateTime()))
                 .ForMember(d => d.EndedAt, s => s.MapFrom(mf => mf.EndedAt.UnixTimestampFromDateTime()));

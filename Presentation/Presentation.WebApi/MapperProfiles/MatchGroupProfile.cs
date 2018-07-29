@@ -8,12 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Presentation.WebApi.MapperProfiles
-{
-    public class ChangeMeProfile: Profile
-    {
-        public ChangeMeProfile()
-        {
+namespace Presentation.WebApi.MapperProfiles {
+    public class ChangeMeProfile: Profile {
+        public ChangeMeProfile() {
             CreateMap<MatchGroupBindingModel, MatchGroupGetPagingSchema>();
             CreateMap<MatchGroupModel, MatchGroupViewModel>();
         }

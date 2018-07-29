@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Model.Models
-{
-    public class MatchModel : IBaseModel
-    {
+namespace Domain.Model.Models {
+    public class MatchModel: IBaseModel {
         public int? Id { get; set; }
         public int? EventId { get; set; }
         public string EventTitle { get; set; }

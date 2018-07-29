@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Domain.Application._App
-{
-    public interface IRepository<T>
-    {
+namespace Domain.Application._App {
+    public interface IRepository<T> {
         //Sync
         int Execute(string sql, object param = null, int? commandTimeout = default, CommandType? commandType = default);
         IEnumerable<T> Query(string sql, object param = null, bool buffered = true, int? commandTimeout = default, CommandType? commandType = default);
@@ -22,27 +20,21 @@ namespace Domain.Application._App
         Task<T> QueryFirstOrDefaultAsync(string sql, object param = null, int? commandTimeout = default, CommandType? commandType = default);
         Task<SqlMapper.GridReader> QueryMultipleAsync(string sql, object param = null, int? commandTimeout = default, CommandType? commandType = default);
     }
-    public class Repository<T> : IRepository<T>
-    {
+    public class Repository<T>: IRepository<T> {
         //Sync
-        public int Execute(string sql, object param, int? commandTimeout, CommandType? commandType)
-        {
+        public int Execute(string sql, object param, int? commandTimeout, CommandType? commandType) {
             return ConnectionKeeper.SqlConnection.Execute(sql, param, commandTimeout: commandTimeout, commandType: commandType);
         }
-        public IEnumerable<T> Query(string sql, object param, bool buffered, int? commandTimeout, CommandType? commandType)
-        {
+        public IEnumerable<T> Query(string sql, object param, bool buffered, int? commandTimeout, CommandType? commandType) {
             return ConnectionKeeper.SqlConnection.Query<T>(sql, param, buffered: buffered, commandTimeout: commandTimeout, commandType: commandType);
         }
-        public int QueryExecute(string sql, object param, int? commandTimeout, CommandType? commandType)
-        {
+        public int QueryExecute(string sql, object param, int? commandTimeout, CommandType? commandType) {
             return ConnectionKeeper.SqlConnection.QueryFirstOrDefault<int>(sql, param, commandTimeout: commandTimeout, commandType: commandType);
         }
-        public T QueryFirstOrDefault(string sql, object param, int? commandTimeout, CommandType? commandType)
-        {
+        public T QueryFirstOrDefault(string sql, object param, int? commandTimeout, CommandType? commandType) {
             return ConnectionKeeper.SqlConnection.QueryFirstOrDefault<T>(sql, param, commandTimeout: commandTimeout, commandType: commandType);
         }
-        public SqlMapper.GridReader QueryMultiple(string sql, object param, int? commandTimeout, CommandType? commandType)
-        {
+        public SqlMapper.GridReader QueryMultiple(string sql, object param, int? commandTimeout, CommandType? commandType) {
             return ConnectionKeeper.SqlConnection.QueryMultiple(sql, param, commandTimeout: commandTimeout, commandType: commandType);
         }
 

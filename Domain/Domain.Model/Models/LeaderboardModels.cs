@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Model.Models
-{
-    public class LeaderboardModel : IBaseModel
-    {
+namespace Domain.Model.Models {
+    public class LeaderboardModel: IBaseModel {
         public int? UserId { get; set; }
         public string NickName { get; set; }
         public string Phone { get; set; }

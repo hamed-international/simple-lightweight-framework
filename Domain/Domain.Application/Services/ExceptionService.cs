@@ -8,22 +8,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Application.Services
-{
-    public class ExceptionService : IExceptionService
-    {
+namespace Domain.Application.Services {
+    public class ExceptionService: IExceptionService {
         #region Constructor
         private readonly IStoreProcedure<IBaseModel, ExceptionInsertSchema> _matchPredict;
-        public ExceptionService(IStoreProcedure<IBaseModel, ExceptionInsertSchema> matchPredict)
-        {
+        public ExceptionService(IStoreProcedure<IBaseModel, ExceptionInsertSchema> matchPredict) {
             _matchPredict = matchPredict;
         }
         #endregion
 
-        public async Task InsertAsync(Exception model, string url, string ip)
-        {
-            var schema = new ExceptionInsertSchema
-            {
+        public async Task InsertAsync(Exception model, string url, string ip) {
+            var schema = new ExceptionInsertSchema {
                 URL = url,
                 Data = JsonConvert.SerializeObject(model.Data.Keys),
                 IP = ip,

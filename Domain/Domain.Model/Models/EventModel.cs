@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Model.Models
-{
-    public class EventModel : IBaseModel
-    {
+namespace Domain.Model.Models {
+    public class EventModel: IBaseModel {
         public int? Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

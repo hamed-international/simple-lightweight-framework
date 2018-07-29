@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Model.Models
-{
-    public class UserModel : IBaseModel
-    {
+namespace Domain.Model.Models {
+    public class UserModel: IBaseModel {
         public int? Id { get; set; }
         public string UserName { get; set; }
         public string NickName { get; set; }

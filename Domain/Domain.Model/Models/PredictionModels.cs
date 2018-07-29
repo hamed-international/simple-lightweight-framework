@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Model.Models
-{
-    public class PredictionModel : IBaseModel
-    {
+namespace Domain.Model.Models {
+    public class PredictionModel: IBaseModel {
         public int? RowsCount { get; set; }
         public int? Id { get; set; }
         public string Title { get; set; }
@@ -25,8 +23,7 @@ namespace Domain.Model.Models
         public int? Point { get; set; }
     }
 
-    public class MostPredictedModel : IBaseModel
-    {
+    public class MostPredictedModel: IBaseModel {
         public int? HomeClubId { get; set; }
         public string HomeClubName { get; set; }
         public int? HomeClubScore { get; set; }

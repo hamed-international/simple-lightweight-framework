@@ -14,8 +14,6 @@ namespace Domain.Application {
         Task Predict(MatchPredictSchema model);
         Task<IEnumerable<MatchGroupModel>> GroupsGetPagingAsync(MatchGroupGetPagingSchema model);
     }
-    public interface IChangeMeService {
-    }
     public interface IEventService {
         Task<IEnumerable<EventModel>> GetPagingAsync(EventGetPagingSchema model);
     }

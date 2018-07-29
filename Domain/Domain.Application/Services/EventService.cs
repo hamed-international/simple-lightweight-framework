@@ -8,20 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Application.Services
-{
-    public class EventService : IEventService
-    {
+namespace Domain.Application.Services {
+    public class EventService: IEventService {
         #region Constructor
         private readonly IStoreProcedure<EventModel, EventGetPagingSchema> _matchGetPaging;
-        public EventService(IStoreProcedure<EventModel, EventGetPagingSchema> matchGetPaging)
-        {
+        public EventService(IStoreProcedure<EventModel, EventGetPagingSchema> matchGetPaging) {
             _matchGetPaging = matchGetPaging;
         }
         #endregion
 
-        public async Task<IEnumerable<EventModel>> GetPagingAsync(EventGetPagingSchema model)
-        {
+        public async Task<IEnumerable<EventModel>> GetPagingAsync(EventGetPagingSchema model) {
             var result = await _matchGetPaging.ExecuteAsync(model);
             model.RowsCount = result != null && result.Any() ? result.FirstOrDefault().RowsCount.Value : 0;
             return result;

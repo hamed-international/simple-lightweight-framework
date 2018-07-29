@@ -12,7 +12,6 @@ namespace Domain.Application._App {
             services.AddTransient<IHttpLogService, HttpLogService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IMatchService, MatchService>();
-            services.AddTransient<IChangeMeService, ChangeMeService>();
             services.AddTransient<IEventService, EventService>();
             services.AddTransient<IExceptionService, ExceptionService>();
             services.AddTransient<IPredictionService, PredictionService>();

@@ -7,12 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Presentation.WebApi.MapperProfiles
-{
-    public class UserProfile : Profile
-    {
-        public UserProfile()
-        {
+namespace Presentation.WebApi.MapperProfiles {
+    public class UserProfile: Profile {
+        public UserProfile() {
             CreateMap<UserModel, UserViewModel>();
 
             CreateMap<ChangePasswordBindingModel, ChangePasswordSchema>();

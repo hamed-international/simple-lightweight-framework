@@ -34,7 +34,7 @@ namespace Domain.Application.Services
             }
             catch (OperationCanceledException ex)
             {
-                _exceptionService.InsertAsync(ex, "Domain.Application.ServicesHttpLogService.Insert", "");
+                await _exceptionService.InsertAsync(ex, "Domain.Application.ServicesHttpLogService.Insert", "");
                 var elapsed = DateTime.UtcNow - startTime;
                 return 0;
             }

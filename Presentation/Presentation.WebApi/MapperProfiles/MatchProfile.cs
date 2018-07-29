@@ -8,12 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Presentation.WebApi.MapperProfiles
-{
-    public class MatchProfile : Profile
-    {
-        public MatchProfile()
-        {
+namespace Presentation.WebApi.MapperProfiles {
+    public class MatchProfile: Profile {
+        public MatchProfile() {
             CreateMap<PredictionBindingModel, MatchPredictSchema>();
             CreateMap<MatchModel, MatchViewModel>()
                 .ForMember(d => d.OccurrenceDate, s => s.MapFrom(mf => mf.OccurrenceDate.UnixTimestampFromDateTime()))

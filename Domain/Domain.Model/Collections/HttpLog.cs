@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace Domain.Model.Collections
-{
-    public class HttpLog
-    {
+namespace Domain.Model.Collections {
+    public class HttpLog {
         public ObjectId Id { get; set; }
         public string IP { get; set; }
         public string Method { get; set; }

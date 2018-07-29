@@ -8,12 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Presentation.WebApi.MapperProfiles
-{
-    public class PredictionProfile : Profile
-    {
-        public PredictionProfile()
-        {
+namespace Presentation.WebApi.MapperProfiles {
+    public class PredictionProfile: Profile {
+        public PredictionProfile() {
             CreateMap<LeaderboardBindingModel, GetLeaderboardSchema>();
             CreateMap<LeaderboardModel, LeaderboardViewModel>();
 

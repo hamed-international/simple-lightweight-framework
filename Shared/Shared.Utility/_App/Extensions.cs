@@ -142,13 +142,13 @@ namespace Shared.Utility._App {
         public static DateTime? DateTimeFromUnix(this long? unixTime) {
             if (!unixTime.HasValue)
                 return null;
-            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddSeconds(unixTime.Value).ToLocalTime();
             return dtDateTime;
         }
 
         public static DateTime DateTimeFromUnixMilisec(this long unixTime) {
-            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddMilliseconds(unixTime).ToLocalTime();
             return dtDateTime;
         }
